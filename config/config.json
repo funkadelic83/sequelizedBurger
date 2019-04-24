@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "mike",
+    "password": "$aTan6969videoL0rd$",
+    "database": "burgers_db",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "mike",
+    "password": "$aTan6969videoL0rd$",
+    "database": "burgers_db",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "mike",
+    "password": "$aTan6969videoL0rd$",
+    "database": "burgers_db",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  }
+}
