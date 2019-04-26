@@ -13,12 +13,12 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
 var routes = require("./routes/api-routes")(app);
 // require("./routes/html-routes.js")(app); // i want to use handlebars instead of this
-app.use(routes);
+// app.use(routes);
 
 db.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {

@@ -4,27 +4,35 @@ module.exports = function(app) {
 
 //IF ERROR< TRY SWAPPING app WITH APP AND VICE VERSA
 
-    app.get("/burgers/create", function (req, res) {
+    app.get("/", function (req, res) {
         db.Burger.findAll({}).then(function (results) {
-            res.json(results);
-            res.redirect("/");
+            var hbsObject = {
+                burgers: results
+            };
+            // res.json(results);
+            console.log(hbsObject);
+            // res.redirect("/");
+            res.render("index", hbsObject);
         })
     });
 
-    app.post("/burgers/create", function (req, res) {
+    app.post("/api/burgers", function (req, res) {
         db.Burger.create({
             burger_name: req.body.burger_name,
             devoured: req.body.devoured
-        })
-            .then(function (dbBurger) {
-                console.log(dbBurger);
-                res.redirect("/");
-            });
-    });
-
+        }).then(function(burgerPost) {
+            res.json(burgerPost);
+        });
+        // function(result) {
+            // res.json({ id: result.insertId });
+            // res.render("index", hbsObject);
+            // };
+        });
+        
+            
     //UPDATE BURGER
 
-    app.put("/burgers/create", function (req, res) {
+    app.put("/api/burgers:id", function (req, res) {
         db.Burger.update(
             req.body,
             {
