@@ -10,7 +10,7 @@ module.exports = function(app) {
                 burgers: results
             };
             // res.json(results);
-            console.log(hbsObject);
+            // console.log(hbsObject);
             // res.redirect("/");
             res.render("index", hbsObject);
         })
@@ -21,7 +21,10 @@ module.exports = function(app) {
             burger_name: req.body.burger_name,
             devoured: req.body.devoured
         }).then(function(burgerPost) {
-            res.json(burgerPost);
+            // console.log(req.body);
+            // console.log(burgerPost);
+            console.log(`>>>` + JSON.stringify(burgerPost.dataValues))
+            res.json(burgerPost.dataValues);
         });
         // function(result) {
             // res.json({ id: result.insertId });
@@ -30,6 +33,9 @@ module.exports = function(app) {
         });
         
             
+        // Template.registerHelper("log", function(something) {
+        //     console.log(something);
+        //   });
     //UPDATE BURGER
 
     app.put("/api/burgers:id", function (req, res) {
