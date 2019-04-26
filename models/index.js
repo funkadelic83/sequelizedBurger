@@ -1,4 +1,4 @@
-// THIS IS BASICALLY JUST COPIED FROM THE BLOG ASSIGNMENT
+"use strict";
 
 var fs = require("fs");
 var path = require("path");
